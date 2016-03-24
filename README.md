@@ -1,1 +1,1 @@
-dotfiles
+Simple dotfiles.
