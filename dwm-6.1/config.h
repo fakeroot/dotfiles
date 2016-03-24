@@ -37,6 +37,8 @@ static const Rule rules[] = {
 
 /* class, instance, title, tags mask, isfloating, monitor */
    //{ "", NULL, NULL, 0, 1 << 0, NULL, -1 },
+  { "gmrun", NULL, NULL, 0, 1, -1},
+  { "Nautilus", NULL, NULL, 0 , 1, -1 },
   { "URxvt", NULL, NULL, 1 << 0, 0, -1 },
   { "Geany", NULL, NULL, 1 << 1, 0, -1 },   
   { "codeblocks", NULL, NULL, 1 << 1, 0, -1 },   
@@ -65,9 +67,10 @@ static const Rule rules[] = {
   { "rdesktop", NULL, "205-9", 1 << 5, 1, -1 },
   { "libreoffice", NULL, NULL, 1 << 6, 0, -1 },
   { "dia", NULL, NULL, 1 << 6, 1, -1 },
-  { "yed", NULL, NULL, 1 << 6, 0, -1 },
-  { "Thunderbird", NULL, NULL, 1 << 7, 0, -1 },
-  { "Msgcompose", NULL, NULL, 1 << 7, 1, -1 },
+  { "kicad", NULL, NULL, 1 << 6, 1, -1 },
+  { "sun-awt-X11-XFramePeer", NULL, NULL, 1 << 6, 0, -1 },
+  { "Thunderbird", "Mail", NULL, 1 << 7, 0, -1 },
+  { "Thunderbird", "Msgcompose", NULL, 1 << 7, 1, -1 },
   { "Firefox", NULL, NULL, 1 << 8, 0, -1 },
   { "chromium-browser", NULL, NULL, 1 << 8, 0, -1 },   
 };
@@ -109,7 +112,7 @@ static const char *Editor1[] = { "geany", NULL };
 static const char *Editor2[] = { "libreoffice", NULL };
 static const char *Schematics1[] = { "dia", NULL };
 static const char *Schematics2[] = { "kicad", NULL };
-static const char *Schematics3[] = { "java", "-jar", "$HOME/.software/yed/yed.jar", NULL };
+static const char *Schematics3[] = { "java", "-jar", "/usr/home/f1y/.software/yed/yed.jar", NULL };
 static const char *PdfViewer1[] = { "xpdf", NULL };
 static const char *PdfViewer2[] = { "epdfview", NULL };
 static const char *PdfViewer3[] = { "zathura", NULL };
@@ -151,6 +154,7 @@ static Key keys[] = {
   { MODKEY|ControlMask, XK_l, spawn, {.v = Editor2 } },
   { MODKEY|ShiftMask, XK_g, spawn, {.v = Graphics1 } },
   { MODKEY|ControlMask, XK_g, spawn, {.v = Graphics2 } },
+  { MODKEY|ShiftMask, XK_w, spawn, {.v = Network1 } },
   { MODKEY|ShiftMask, XK_y, spawn, {.v = Schematics3 } },
   { MODKEY|ControlMask, XK_F1, spawn, {.v = RdpWe } },
   { MODKEY|ControlMask, XK_F2, spawn, {.v = RdpPerun } },
@@ -165,6 +169,8 @@ static Key keys[] = {
   { MODKEY|ShiftMask, XK_x, spawn, {.v = MusicTogglePause } },
   { MODKEY, XK_c, spawn, {.v = MusicNext } },
   { MODKEY|ShiftMask, XK_v, spawn, {.v = MusicPlayerRun } },
+  { MODKEY, XK_F1, spawn, {.v = CommandRun } },
+  { MODKEY|ShiftMask, XK_n, spawn, {.v = FileManager1 } },
   { MODKEY, XK_Up, spawn, SHCMD("mixer -S vol +3 >/dev/null") },
   { MODKEY, XK_Down, spawn, SHCMD("mixer -S vol -3 >/dev/null") },
   { MODKEY, XK_b, togglebar, {0} },
