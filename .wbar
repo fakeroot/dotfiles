@@ -1,0 +1,112 @@
+i: /usr/local/share/pixmaps/wbar/dock.png
+c: wbar --bpress --above-desk --vbar --pos top-left --grow --isize 38 --idist 2 --nanim 4 --zoomf 2,000000 --jumpf 1,000000 --filter 2 --fc 0xffd6d6d6
+t: /usr/local/share/fonts/dejavu/DejaVuSans-Bold/12
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/Terminal.png
+c: urxvtc -title USER
+t: User Shell
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/gksu-root-terminal.png
+c: urxvtc -title ROOT -e su -
+t: Root Shell
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/firefox-original.png
+c: firefox
+t: Firefox
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/chromium-browser2.png
+c: chrome
+t: Chrome
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/thunderbird.png
+c: thunderbird
+t: Mail
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/nautilus.png
+c: dbus-launch pcmanfm
+t: Pcmanfm
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/geany.png
+c: geany
+t: Geany
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/openofficeorg-writer.png
+c: libreoffice --writer
+t: Writer
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/openofficeorg-calc.png
+c: libreoffice --calc
+t: Calc
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/openofficeorg-math.png
+c: libreoffice --math
+t: Math
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/AdobeReader10.png
+c: epdfview
+t: Epdfview
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/AdobeAIR.png
+c: xpdf
+t: Xpdf
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/calc.png
+c: xcalc
+t: Xcalc
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/gpicview.png
+c: gpicview
+t: Gpicview
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/gimp.png
+c: gimp
+t: Gimp
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/inkscape.png
+c: inkscape
+t: Inkscape
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/dia.png
+c: dia
+t: Dia
+
+i: /usr/home/f1y/.icons/Faenza/categories/64/applications-electronics.png
+c: kicad
+t: Kicad
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/drakmenustyle.png
+c: yed -jar /usr/home/f1y/.software/yed/yed.jar
+t: yEd
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/remmina.png
+c: zdalny_pulpit.sh we
+t: VNC WE
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/remmina.png
+c: zdalny_pulpit.sh perun
+t: PERUN
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/remmina.png
+c: zdalny_pulpit.sh 204
+t: LAB204
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/remmina.png
+c: zdalny_pulpit.sh 205
+t: LAB205
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/wireshark.png
+c: wireshark
+t: Wireshark
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/virtualbox-ose.png
+c: VirtualBox
+t: VirtualBox
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/wmtweaks.png
+c: qemu-launcher
+t: Qemu
+
+i: /usr/home/f1y/.icons/Faenza/apps/64/redhat-server_settings.png
+c: wbar-config
+t: Wbar cfg
+
