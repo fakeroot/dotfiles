@@ -67,6 +67,7 @@ static const Rule rules[] = {
   { "dia", NULL, NULL, 1 << 6, 1, -1 },
   { "yed", NULL, NULL, 1 << 6, 0, -1 },
   { "Thunderbird", NULL, NULL, 1 << 7, 0, -1 },
+  { "Msgcompose", NULL, NULL, 1 << 7, 1, -1 },
   { "Firefox", NULL, NULL, 1 << 8, 0, -1 },
   { "chromium-browser", NULL, NULL, 1 << 8, 0, -1 },   
 };
@@ -156,7 +157,7 @@ static Key keys[] = {
   { MODKEY, XK_z, spawn, {.v = MusicPrevious } } ,
   { MODKEY, XK_x, spawn, {.v = MusicPlay } },
   { MODKEY|ControlMask, XK_x, spawn, {.v = MusicStop } },
-  { MODKEY|Shift, XK_x, spawn, {.v = MusicTogglePause } },
+  { MODKEY|ShiftMask, XK_x, spawn, {.v = MusicTogglePause } },
   { MODKEY, XK_c, spawn, {.v = MusicNext } },
   { MODKEY|ShiftMask, XK_v, spawn, {.v = MusicPlayerRun } },
   { MODKEY, XK_Up, spawn, SHCMD("mixer -S vol +3 >/dev/null") },
