@@ -8,15 +8,24 @@ void reexec(const Arg *arg) {
 
 /* appearance */
 static const char *fonts[] = {
-   "dejavu sans mono:medium:pixelsize=15:medium:antialias=true"
+   "Ubuntu Mono:medium:pixelsize=20:medium:antialias=true"
 };
-static const char dmenufont[] = "ubuntu mono:medium:pixelsize=15:medium:antialias=true";
+static const char dmenufont[] = "ubuntu mono:medium:pixelsize=16:medium:antialias=true";
+/*
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#005577";
 static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
+*/
+static const char normbordercolor[] = "#333333";
+static const char normbgcolor[]     = "#333333";
+static const char normfgcolor[]     = "#999999";
+static const char selbordercolor[]  = "#ff0000";
+static const char selbgcolor[]      = "#333333";
+static const char selfgcolor[]      = "#efefcf";
+
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 24;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -108,8 +117,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *TermCmd1[] = { "urxvtc", "-title", "USER", NULL };
 static const char *TermCmd2[] = { "urxvtc", "-title", "ROOT", "-e", "su", "-", NULL };
-static const char *TermCmd3[] = { "st", "-t", "ST: USER", NULL };
-static const char *TermCmd4[] = { "st", "-t", "ST: ROOT", "-e", "su", "-", NULL };
 static const char *Browser1[] = { "chromium", NULL };
 static const char *Browser2[] = { "firefox", NULL };
 static const char *MailClient1[] = { "thunderbird", NULL };
@@ -139,8 +146,8 @@ static const char *RdpPerun[] = { "zdalny_pulpit.sh", "perun", NULL };
 static const char *RdpAll[] = { "zdalny_pulpit.sh", "all", NULL };
 static const char *Rdp204[] = { "zdalny_pulpit.sh", "204", NULL };
 static const char *Rdp205[] = { "zdalny_pulpit.sh", "205", NULL };
-static const char *CheckSrv[] = { "hostcheck.sh", "srv", NULL };
-static const char *CheckPC[] = { "hostcheck.sh", "pc", NULL };
+static const char *CheckSrv[] = { "HostCheck.sh", "srv", NULL };
+static const char *CheckPC[] = { "HostCheck.sh", "lab", NULL };
 static const char *Virtual1[] = { "qemu-launcher", NULL };
 static const char *MusicPrevious[] = { "mocp", "--previous", ">/dev/null", NULL };
 static const char *MusicPlay[] = { "mocp", "--play", ">/dev/null", NULL };
@@ -152,8 +159,8 @@ static const char *MusicPlayerRun[] = { "urxvtc", "-title", "MOCP", "-e", "mocp"
 static Key keys[] = {
 	/* modifier, key, function, argument */
   { MODKEY, XK_p, spawn, {.v = dmenucmd } },
-  { MODKEY|ShiftMask, XK_Return, spawn, {.v = TermCmd3 } },
-  { MODKEY|ControlMask, XK_Return, spawn, {.v = TermCmd4 } },
+  { MODKEY|ShiftMask, XK_Return, spawn, {.v = TermCmd1 } },
+  { MODKEY|ControlMask, XK_Return, spawn, {.v = TermCmd2 } },
   { MODKEY|ShiftMask, XK_f, spawn, {.v = Browser2 } },
   { MODKEY|ControlMask, XK_f, spawn, {.v = Browser1 } },
   { MODKEY|ShiftMask, XK_m, spawn, {.v = MailClient1 } },
@@ -178,9 +185,9 @@ static Key keys[] = {
   { MODKEY|ShiftMask, XK_v, spawn, {.v = MusicPlayerRun } },
   { MODKEY, XK_F1, spawn, {.v = CommandRun } },
   { MODKEY|ShiftMask, XK_n, spawn, {.v = FileManager1 } },
-  { MODKEY|ControlMask, XK_F12, spawn, SHCMD("amixer -c 0 set Master 0 && playradio.sh off >/dev/null && mocp -s >/dev/null && slock") },
-  { MODKEY, XK_Left, spawn, SHCMD("amixer -c 0 set Master 3dB-") },
-  { MODKEY, XK_Right, spawn, SHCMD("amixer -c 0 set Master 3dB+") },
+  { MODKEY|ControlMask, XK_F12, spawn, SHCMD("mixer -S 0 && mocp --stop >/dev/null && slock") },
+  { MODKEY, XK_Left, spawn, SHCMD("mixer -S vol -3") },
+  { MODKEY, XK_Right, spawn, SHCMD("mixer -S vol +3") },
   { MODKEY|ControlMask, XK_F8, spawn, {.v = Virtual1 } },
   { MODKEY, XK_b, togglebar, {0} },
   { MODKEY, XK_j, focusstack, {.i = +1 } },
@@ -224,7 +231,7 @@ static Button buttons[] = {
   { ClkLtSymbol, 0, Button1, setlayout, {0} },
   { ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[2]} },
   { ClkWinTitle, 0, Button2, zoom, {0} },
-  { ClkStatusText, 0, Button2, spawn, {.v = TermCmd3 } },
+  { ClkStatusText, 0, Button2, spawn, {.v = TermCmd1 } },
   { ClkClientWin, MODKEY, Button1, movemouse, {0} },
   { ClkClientWin, MODKEY, Button2, togglefloating, {0} },
   { ClkClientWin, MODKEY, Button3, resizemouse, {0} },
