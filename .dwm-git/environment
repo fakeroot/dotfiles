@@ -1,0 +1,7 @@
+dzen2_home="$HOME/.dzen2"
+dzen2_fg_active="#aaaaaa"
+dzen2_bg_active="#111111"
+dzen2_fg_inactive="#333333"
+dzen2_bg_inactive="#111111"
+conky_config="$dzen2_home/conky.conf"
+scripts_path="$HOME/.dzen2/scripts"
